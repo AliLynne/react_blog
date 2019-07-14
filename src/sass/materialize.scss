@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.hero {
+  max-height: 70vh;
+  object-fit: contain;
+}
+
 // Color
 @import "components/color-variables";
 @import "components/color-classes";

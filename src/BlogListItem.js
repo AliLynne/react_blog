@@ -21,11 +21,17 @@ class BlogListItem extends Component {
     return (
       <div className="container">
         <li className="card">
+          
           <div className="card-content">
-            <img className="responsive-img" src={post.heroImage.fields.file.url} alt="hero"/>
-            <h3 className="center">{post.title}</h3>
-            <blockquote>{post.description}</blockquote>
-            <ReactMarkdown source={post.body} />
+            <div className="card-image ">
+              <img className="responsive-img hero" src={post.heroImage.fields.file.url} alt={post.heroImage.fields.description}/>
+            </div>
+            <div className="card-content">
+              <h3 className="center">{post.title}</h3>
+              <blockquote>{post.description}</blockquote>
+              <ReactMarkdown source={post.body} />
+            </div>
+            
           </div>
           
         </li>
