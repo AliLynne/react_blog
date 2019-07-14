@@ -5,10 +5,10 @@ const BlogListItem = (props) => {
   const post = props.entry.fields
   console.log(post)
   return (
-    <div>
-      <li className="collection-item">
-        <div className="container">
-          <h3>{post.title}</h3>
+    <div className="container">
+      <li className="card">
+        <div className="card-content">
+          <h3 className="center">{post.title}</h3>
           <blockquote>{post.description}</blockquote>
           <ReactMarkdown source={post.body} />
         </div>

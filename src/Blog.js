@@ -29,8 +29,8 @@ class Blog extends Component {
     return (
       <div>
         
-        <ul className="collection">
-          <li className="collection-header center"><h2>Blog Posts</h2></li>
+        <ul>
+          <li className="center"><h2>Blog Posts</h2></li>
           { entries && entries.map(entry => {
             return <BlogListItem key={entry.sys.id} entry={entry} />
           })}
