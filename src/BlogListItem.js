@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown/with-html';
-import htmlParser from 'react-markdown/plugins/html-parser';
+import { Link } from 'react-router-dom';
 
 class BlogListItem extends Component {
   constructor(props) {
     super(props)
-
+    console.log(props)
     this.state = {
       post: this.props.entry.fields,
-      htmlParser: null
+      id: this.props.entry.sys.id
     }
   }
   
@@ -17,7 +17,8 @@ class BlogListItem extends Component {
   
   render() {
     const post = this.state.post
-    console.log(post)
+    const URL = `/blog/${this.state.id}`
+    console.log(this.state.id)
     return (
       <div className="container">
         <li className="card">
@@ -27,7 +28,7 @@ class BlogListItem extends Component {
               <img className="responsive-img hero" src={post.heroImage.fields.file.url} alt={post.heroImage.fields.description}/>
             </div>
             <div className="card-content">
-              <h3 className="center">{post.title}</h3>
+              <h3 className="center"><Link to={URL}>{post.title}</Link></h3>
               <blockquote>{post.description}</blockquote>
               <ReactMarkdown source={post.body} />
             </div>

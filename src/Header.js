@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
         <div className="nav-wrapper">
           <a href="/" className="brand-logo">AliLynne</a>
           <ul className="right">
-            <li><a href="/..">Link</a></li>
+            <li><NavLink to="/">Link</NavLink></li>
           </ul>
         </div>
       </nav>
